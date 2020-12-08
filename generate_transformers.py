@@ -186,6 +186,11 @@ def main():
     parser.add_argument("--seed", type=int, default=42, help="random seed for initialization")
     parser.add_argument("--no_cuda", action="store_true", help="Avoid using CUDA when available")
     parser.add_argument("--num_return_sequences", type=int, default=1, help="The number of samples to generate.")
+    
+    
+    parser.add_argument("--no_repeat_ngram_size", type=int, default=0, help="no_repeat")
+    
+    
     args = parser.parse_args()
 
     args.device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
@@ -233,6 +238,7 @@ def main():
             repetition_penalty=args.repetition_penalty,
             do_sample=True,
             num_return_sequences=args.num_return_sequences,
+            no_repeat_ngram_size=args.no_repeat_ngram_size,
         )
 
         # Remove the batch dimension when returning multiple sequences
