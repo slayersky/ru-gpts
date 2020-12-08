@@ -234,7 +234,7 @@ def main():
             input_ids=encoded_prompt,
             max_length=args.length + len(encoded_prompt[0]),
             temperature=args.temperature,
-            # top_k=args.k,
+            top_k=args.k,
             top_k=new_k,
             top_p=args.p,
             repetition_penalty=args.repetition_penalty,
