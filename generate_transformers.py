@@ -171,7 +171,7 @@ def main():
     parser.add_argument(
         "--temperature",
         type=float,
-        default=1.0,
+        default=0.9,
         help="temperature of 1.0 has no effect, lower tend toward greedy sampling",
     )
     parser.add_argument(
@@ -263,6 +263,5 @@ def main():
 
     return generated_sequences
 
-print ('meta0.1')
 if __name__ == "__main__":
     main()
