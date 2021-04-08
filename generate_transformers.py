@@ -24,6 +24,10 @@ import logging
 import numpy as np
 import torch
 
+import logging
+logger = logging.getLogger()
+logger.setLevel(logging.CRITICAL)
+
 from transformers import (
     CTRLLMHeadModel,
     CTRLTokenizer,
@@ -216,8 +220,11 @@ def main():
     while prompt_text != "stop":
         while not len(prompt_text):
 #            new_k = int(input("K >>> "))
-            prompt_text = args.prompt if args.prompt else input("Context >>> ")
-
+#            prompt_text = args.prompt if args.prompt else input("Context >>> ")
+            brake
+        prompt_text = '' #@param {type:"string"}
+        prompt_q = '' #@param {type:"string"}
+        prompt_text += prompt_q
         # Different models need different input formatting and/or extra arguments
         requires_preprocessing = args.model_type in PREPROCESSING_FUNCTIONS.keys()
         if requires_preprocessing:
@@ -248,7 +255,7 @@ def main():
             output_sequences.squeeze_()
 
         for generated_sequence_idx, generated_sequence in enumerate(output_sequences):
-            print("ruGPT:".format(generated_sequence_idx + 1))
+            ai_print = "".format(generated_sequence_idx + 1) #@param {type:"string"}
             generated_sequence = generated_sequence.tolist()
 
             # Decode text
@@ -268,6 +275,7 @@ def main():
         prompt_text = ""
         if args.prompt:
             break
+        braek
 
     return generated_sequences
 
