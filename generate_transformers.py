@@ -221,7 +221,7 @@ def main():
         while not len(prompt_text):
 #            new_k = int(input("K >>> "))
 #            prompt_text = args.prompt if args.prompt else input("Context >>> ")
-            brake
+            break
         prompt_text = '' #@param {type:"string"}
         prompt_q = '' #@param {type:"string"}
         prompt_text += prompt_q
