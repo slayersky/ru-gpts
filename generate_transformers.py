@@ -189,6 +189,7 @@ def main():
     
     
     parser.add_argument("--no_repeat_ngram_size", type=int, default=0, help="no_repeat")
+    parser.add_argument("--num_beams", type=int, default=0, help="no_repeat")
     
     
     args = parser.parse_args()
@@ -234,6 +235,7 @@ def main():
             max_length=args.length + len(encoded_prompt[0]),
             temperature=args.temperature,
 #            top_k=new_k,
+            num_beams=args.num_beams,
             top_k=args.k,
             top_p=args.p,
             repetition_penalty=args.repetition_penalty,
